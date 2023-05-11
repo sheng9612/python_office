@@ -1,0 +1,14 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Read the CSV file
+df = pd.read_csv("test.csv")
+
+# Generate scatterplots for each pair of columns
+for i, column1 in enumerate(df.columns):
+    for j, column2 in enumerate(df.columns):
+        if i < j:
+            plt.scatter(df[column1], df[column2])
+            plt.xlabel(column1)
+            plt.ylabel(column2)
+            plt.show()
