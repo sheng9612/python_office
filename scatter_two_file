@@ -1,0 +1,24 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Read the CSV file
+df_pass = pd.read_csv("test_pass.csv")
+df_fail = pd.read_csv("test_fail.csv")
+
+seq = ['aa','ab','ac']
+
+
+# Generate scatterplots for each pair of columns
+i = 0
+for element1 in seq:
+    j = 0
+    for element2 in seq:
+        if i < j:
+            print(i,j)
+            plt.scatter(df_pass[element1], df_pass[element2], c = 'g')
+            plt.scatter(df_fail[element1], df_fail[element2], c = 'r')
+            plt.xlabel(element1)
+            plt.ylabel(element2)
+            plt.show()
+        j += 1
+    i += 1
