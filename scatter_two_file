@@ -22,3 +22,13 @@ for element1 in seq:
             plt.show()
         j += 1
     i += 1
+
+
+
+
+########normalize
+df_pass2 = (df_pass_data-df_pass_data.min()) / (df_pass_data.max()-df_pass_data.min())
+df_pass2
+
+df_fail2 = (df_fail_data-df_fail_data.min()) / (df_fail_data.max()-df_fail_data.min())
+df_fail2
