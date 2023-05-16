@@ -1,0 +1,25 @@
+import pandas as pd
+
+# 讀取 all.csv 檔案
+df = pd.read_csv('all.csv')
+
+# 將分數不介於 3 到 7 的資料分為 df_fail
+df_fail = df[(df['point'] < 3) | (df['point'] > 7)]
+
+# 其餘分數為 df_pass
+df_pass = df[(df['point'] >= 3) & (df['point'] <= 7)]
+
+# 輸出 df_fail 和 df_pass 的結果
+print("df_fail:")
+print(df_fail)
+print("\ndf_pass:")
+print(df_pass)
+
+
+
+import pandas as pd
+df_raw = pd.read_csv('raw.csv')
+item1 = ['aa','ab','ac']
+print(df_raw)
+df_raw_test = df_raw[(df_raw['ID']=='abc1') & (df_raw['item']=='aa')]
+print(df_raw_test)
